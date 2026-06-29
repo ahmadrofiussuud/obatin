@@ -1,5 +1,5 @@
 /**
- * MediAI Application Configuration System
+ * ObatIn Application Configuration System
  * Centralized, validated environment configuration with role-based route definitions.
  */
 
@@ -22,7 +22,7 @@ export const env = {
   },
   blockchain: {
     nodeUrl: process.env.BLOCKCHAIN_NODE_URL || 'http://localhost:8080/api/v1',
-    channel: process.env.BLOCKCHAIN_CHANNEL || 'mediai-channel',
+    channel: process.env.BLOCKCHAIN_CHANNEL || 'obatin-channel',
     chaincode: process.env.BLOCKCHAIN_CHAINCODE || 'emr-ledger',
     mspId: process.env.BLOCKCHAIN_USER_MSP || 'Org1MSP',
   },

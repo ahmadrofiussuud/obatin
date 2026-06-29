@@ -1,6 +1,6 @@
 import OpenAI from "openai";
 
-const apiKey = process.env.OPENAI_API_KEY || "sk-proj-mockopenapikeyformediaiprojectfoundation";
+const apiKey = process.env.OPENAI_API_KEY || "sk-proj-mockopenapikeyforobatinprojectfoundation";
 
 // Initialize OpenAI client
 export const openai = new OpenAI({
@@ -19,7 +19,7 @@ export class AIService {
         messages: [
           {
             role: "system",
-            content: `Anda adalah asisten diagnosis AI medis klinis untuk platform MediAI Indonesia. 
+            content: `Anda adalah asisten diagnosis AI medis klinis untuk platform ObatIn Indonesia. 
 Tugas Anda adalah menganalisis keluhan (symptoms) pasien dan memberikan saran klinis pendukung keputusan (clinical decision support) untuk dokter.
 Format output Anda harus terstruktur:
 1. Kemungkinan Differential Diagnosis (serta kode ICD-10 jika relevan).

@@ -19,10 +19,10 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MediAI — Platform Administrasi Kesehatan Digital Indonesia",
+  title: "ObatIn — Platform Administrasi Kesehatan Digital Indonesia",
   description: "Platform SaaS rekam medis digital (EMR) terintegrasi standard FHIR SATUSEHAT Kemenkes, pengamanan blockchain Hyperledger Fabric, dan asisten klinis AI.",
-  keywords: ["MediAI", "EMR", "Rekam Medis Elektronik", "SATUSEHAT", "Kemenkes", "Hyperledger Fabric", "Blockchain Kesehatan", "AI Dokter Indonesia"],
-  authors: [{ name: "MediAI Team" }],
+  keywords: ["ObatIn", "EMR", "Rekam Medis Elektronik", "SATUSEHAT", "Kemenkes", "Hyperledger Fabric", "Blockchain Kesehatan", "AI Dokter Indonesia"],
+  authors: [{ name: "ObatIn Team" }],
 };
 
 export const viewport = {

@@ -71,10 +71,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   // 2. Dynamic branding aesthetics
   const brandName = 
     role === "PATIENT" 
-      ? "MediAI Sehat" 
+      ? "ObatIn Sehat" 
       : role === "ADMIN" || role === "SUPER_ADMIN" 
-      ? "MediAI Console" 
-      : "MediAI Klinik";
+      ? "ObatIn Console" 
+      : "ObatIn Klinik";
 
   const brandLetter = 
     role === "PATIENT" 

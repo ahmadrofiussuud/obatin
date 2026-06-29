@@ -40,13 +40,13 @@ export default function LoginPage() {
   const handleQuickLogin = async (role: "patient" | "doctor" | "admin") => {
     setLoading(true);
     setError(null);
-    let mockEmail = "patient@mediai.id";
+    let mockEmail = "patient@obatin.id";
     const mockPassword = "password123";
 
     if (role === "doctor") {
-      mockEmail = "doctor@mediai.id";
+      mockEmail = "doctor@obatin.id";
     } else if (role === "admin") {
-      mockEmail = "admin@mediai.id";
+      mockEmail = "admin@obatin.id";
     }
 
     try {
@@ -79,7 +79,7 @@ export default function LoginPage() {
         {/* Brand */}
         <div className="text-center space-y-2">
           <div className="inline-flex items-center justify-center px-3 py-1 bg-primary/10 text-primary rounded-full text-label-caps font-bold">
-            MediAI Indonesia
+            ObatIn Indonesia
           </div>
           <h1 className="text-heading-lg font-bold text-neutral-900 dark:text-white">
             Masuk ke Akun Anda

@@ -120,10 +120,10 @@ export default function DoctorDashboardPage() {
       return;
     }
     setAiLoading(true);
-    toast({ title: "MediAI Engine", description: "Menganalisis diagnosa banding...", type: "info" });
+    toast({ title: "ObatIn Engine", description: "Menganalisis diagnosa banding...", type: "info" });
     
     setTimeout(() => {
-      setAiSuggestions(`**Saran Diagnosa Banding MediAI:**
+      setAiSuggestions(`**Saran Diagnosa Banding ObatIn:**
 1. **Hipertensi Primer (ICD-10: I10)**
    - Berdasarkan gejala pusing hebat belakang kepala dan leher kaku.
    - Rekomendasi: Monitor tekanan darah arteri 3 kali berturut-turut.

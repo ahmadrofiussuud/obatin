@@ -131,14 +131,14 @@ export default function ApiPortalPage() {
 
   // Code snippets data
   const snippets = {
-    curl: `curl -X POST https://api.mediai.id/v1/diagnosis/analyze \\
+    curl: `curl -X POST https://api.obatin.id/v1/diagnosis/analyze \\
   -H "Authorization: Bearer ma_live_90421893ea721c890f92" \\
   -H "Content-Type: application/json" \\
   -d '{
     "symptoms": ["s-1", "s-4"],
     "vitals": { "bp_sys": 120, "bp_dia": 80 }
   }'`,
-    js: `const response = await fetch('https://api.mediai.id/v1/diagnosis/analyze', {
+    js: `const response = await fetch('https://api.obatin.id/v1/diagnosis/analyze', {
   method: 'POST',
   headers: {
     'Authorization': 'Bearer ma_live_90421893ea721c890f92',
@@ -152,7 +152,7 @@ export default function ApiPortalPage() {
 const data = await response.json();`,
     python: `import requests
 
-url = "https://api.mediai.id/v1/diagnosis/analyze"
+url = "https://api.obatin.id/v1/diagnosis/analyze"
 headers = {
     "Authorization": "Bearer ma_live_90421893ea721c890f92",
     "Content-Type": "application/json"
@@ -170,7 +170,7 @@ data = response.json()`,
     <AppShell>
       <PageHeader
         title="Portal Developer & API B2B"
-        description="Gunakan endpoint terstandarisasi untuk mengintegrasikan rekam medis faskes pihak ketiga dengan MediAI, dan kelola otorisasi credentials API Key."
+        description="Gunakan endpoint terstandarisasi untuk mengintegrasikan rekam medis faskes pihak ketiga dengan ObatIn, dan kelola otorisasi credentials API Key."
         breadcrumbs={[
           { label: "Utama", href: "/dashboard" },
           { label: "Portal API" },

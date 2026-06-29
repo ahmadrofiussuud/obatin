@@ -39,7 +39,7 @@ export const useGlobalStore = create<GlobalState>()(
       }),
     }),
     {
-      name: "mediai-global-storage", // local storage key
+      name: "obatin-global-storage", // local storage key
     }
   )
 );

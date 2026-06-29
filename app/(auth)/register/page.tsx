@@ -54,7 +54,7 @@ export default function RegisterPage() {
             Pendaftaran Pasien Baru
           </div>
           <h1 className="text-heading-lg font-bold text-neutral-900 dark:text-white">
-            Buat Akun MediAI
+            Buat Akun ObatIn
           </h1>
           <p className="text-caption text-neutral-500">
             Daftarkan diri Anda untuk mengintegrasikan rekam medis nasional.
