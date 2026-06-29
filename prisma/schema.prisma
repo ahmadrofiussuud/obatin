@@ -1,0 +1,256 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum UserRole {
+  PATIENT
+  DOCTOR
+  NURSE
+  ADMIN
+  SUPER_ADMIN
+}
+
+enum Gender {
+  MALE
+  FEMALE
+}
+
+enum RecordStatus {
+  DRAFT
+  FINALIZED
+}
+
+enum AppointmentStatus {
+  SCHEDULED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+  NO_SHOW
+}
+
+enum PrescriptionStatus {
+  PENDING
+  DISPENSED
+  CANCELLED
+}
+
+// 1. User Table (Base Identity & Authentication)
+model User {
+  id             String         @id @default(uuid())
+  email          String         @unique
+  password       String         // Hashed password
+  name           String
+  role           UserRole       @default(PATIENT)
+  image          String?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  // 1:1 Profile Relations
+  patientProfile Patient?
+  doctorProfile  DoctorProfile?
+  
+  // AI Consultation History
+  aiConsultations AIConsultation[]
+}
+
+// 2. Patient Table (Demographics & Emergency Contact)
+model Patient {
+  id             String         @id @default(uuid())
+  userId         String         @unique
+  user           User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Indonesian Identifiers
+  nik            String         @unique // Nomor Induk Kependudukan (National ID)
+  bpjsNumber     String?        @unique // Indonesian Health Insurance Number
+  
+  // Demographics
+  gender         Gender
+  dateOfBirth    DateTime
+  placeOfBirth   String?
+  address        String
+  phoneNumber    String
+  bloodType      String?
+  allergies      String?        // List of allergies
+  
+  // Emergency Contact Info
+  emergencyContactName     String
+  emergencyContactPhone    String
+  emergencyContactRelation String
+  
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  // Relations
+  medicalRecords MedicalRecord[]
+  appointments   Appointment[]
+  prescriptions  Prescription[]
+  labResults     LabResult[]
+}
+
+// 3. Facility Table (Hospitals, Clinics, PUSKESMAS)
+model Facility {
+  id             String         @id @default(uuid())
+  name           String
+  type           String         // e.g. "HOSPITAL", "CLINIC", "PUSKESMAS"
+  code           String         @unique // SATUSEHAT / Kemenkes official code
+  address        String
+  city           String
+  province       String
+  phoneNumber    String
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  // Relations
+  doctors        DoctorProfile[]
+  medicalRecords MedicalRecord[]
+  appointments   Appointment[]
+}
+
+// 4. DoctorProfile Table (Doctor Details & Facility Association)
+model DoctorProfile {
+  id             String         @id @default(uuid())
+  userId         String         @unique
+  user           User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  facilityId     String
+  facility       Facility       @relation(fields: [facilityId], references: [id])
+  
+  sipNumber      String         @unique // Surat Izin Praktik (Practice License Number)
+  specialty      String         // e.g., Pediatrician, General Practitioner
+  
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  // Relations
+  medicalRecords MedicalRecord[]
+  appointments   Appointment[]
+  prescriptions  Prescription[]
+  labResults     LabResult[]
+}
+
+// 5. MedicalRecord Table (Core Electronic Medical Record - EMR)
+model MedicalRecord {
+  id             String         @id @default(uuid())
+  patientId      String
+  patient        Patient        @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  
+  doctorId       String
+  doctor         DoctorProfile  @relation(fields: [doctorId], references: [id])
+  
+  facilityId     String
+  facility       Facility       @relation(fields: [facilityId], references: [id])
+  
+  recordDate     DateTime       @default(now())
+  
+  // Clinical Data
+  symptoms       String         // Subjective complaints
+  diagnosis      String         // Objective diagnosis summary
+  icd10Code      String         // ICD-10 Diagnosis code for Indonesian standard insurance claim
+  treatmentPlan  String?        // Plan of treatment
+  notes          String?        // General physician comments
+  
+  status         RecordStatus   @default(DRAFT)
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  // Relations
+  prescriptions  Prescription[]
+  labResults     LabResult[]
+  blockchainLogs BlockchainLog[]
+}
+
+// 6. Appointment Table (Patient Doctor Meetings)
+model Appointment {
+  id              String            @id @default(uuid())
+  patientId       String
+  patient         Patient           @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  
+  doctorId        String
+  doctor          DoctorProfile     @relation(fields: [doctorId], references: [id])
+  
+  facilityId      String
+  facility        Facility          @relation(fields: [facilityId], references: [id])
+  
+  appointmentDate DateTime
+  status          AppointmentStatus @default(SCHEDULED)
+  complaint       String            // Patient's reason for visit
+  notes           String?           // Staff/Doctor schedule notes
+  
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+}
+
+// 7. Prescription Table (Prescribed Medication Lifecycle)
+model Prescription {
+  id              String             @id @default(uuid())
+  medicalRecordId String
+  medicalRecord   MedicalRecord      @relation(fields: [medicalRecordId], references: [id], onDelete: Cascade)
+  
+  patientId       String
+  patient         Patient            @relation(fields: [patientId], references: [id])
+  
+  doctorId        String
+  doctor          DoctorProfile      @relation(fields: [doctorId], references: [id])
+  
+  medications     Json               // Array of objects detailing: drug name, qty, dosage, frequency
+  instructions    String             // Dynamic usage instruction (e.g. 3x1 sesudah makan)
+  status          PrescriptionStatus @default(PENDING)
+  
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+}
+
+// 8. LabResult Table (Lab Test Values & References)
+model LabResult {
+  id              String             @id @default(uuid())
+  medicalRecordId String
+  medicalRecord   MedicalRecord      @relation(fields: [medicalRecordId], references: [id], onDelete: Cascade)
+  
+  patientId       String
+  patient         Patient            @relation(fields: [patientId], references: [id])
+  
+  doctorId        String
+  doctor          DoctorProfile      @relation(fields: [doctorId], references: [id])
+  
+  testName        String             // e.g. HbA1c, Cholesterol, Complete Blood Count
+  testDate        DateTime
+  resultValue     String             // Lab measurement value
+  referenceRange  String             // Reference standard interval (e.g. 70-100 mg/dL)
+  isAbnormal      Boolean            @default(false)
+  notes           String?
+  
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+}
+
+// 9. BlockchainLog Table (Tamper-Evidence & Integrity Audit Trail)
+model BlockchainLog {
+  id              String         @id @default(uuid())
+  medicalRecordId String
+  medicalRecord   MedicalRecord  @relation(fields: [medicalRecordId], references: [id], onDelete: Cascade)
+  
+  action          String         // e.g., "CREATE", "UPDATE", "REVOKE"
+  recordHash      String         // SHA-256 checksum hash of EMR clinical content
+  transactionHash String         // Hyperledger Fabric ledger transaction id
+  blockNumber     Int            // Blockchain height indicator
+  signerId        String         // User ID of the signing operator
+  timestamp       DateTime       @default(now())
+}
+
+// 10. AIConsultation Table (AI Diagnosis Assistant Chat Session)
+model AIConsultation {
+  id              String         @id @default(uuid())
+  userId          String
+  user            User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  sessionTitle    String
+  chatHistory     Json           // Array of message logs: { role: 'user'|'assistant', content: string, timestamp: ISOString }
+  
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+}
