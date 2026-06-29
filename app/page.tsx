@@ -9,7 +9,6 @@ import {
   BarChart3,
   ClipboardList,
   HeartPulse,
-  Stethoscope,
   CheckCircle,
   XCircle,
   Menu,
@@ -31,12 +30,7 @@ const navLinks = [
   { label: "Tentang", href: "#tentang" },
 ];
 
-const heroFeatureCards = [
-  { icon: Activity, label: "Vitalitas Real-time" },
-  { icon: Brain, label: "MediBot AI" },
-  { icon: CalendarDays, label: "Jadwal Dokter" },
-  { icon: FileText, label: "Rekam Medis" },
-];
+
 
 const features = [
   {

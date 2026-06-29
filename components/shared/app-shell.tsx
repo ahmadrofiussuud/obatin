@@ -68,26 +68,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       ? "/dashboard/admin" 
       : "/dashboard";
 
-  // 2. Dynamic branding aesthetics
-  const brandName = 
-    role === "PATIENT" 
-      ? "ObatIn Sehat" 
-      : role === "ADMIN" || role === "SUPER_ADMIN" 
-      ? "ObatIn Console" 
-      : "ObatIn Klinik";
 
-  const brandLetter = 
-    role === "PATIENT" 
-      ? "S" 
-      : role === "ADMIN" || role === "SUPER_ADMIN" 
-      ? "C" 
-      : "K";
-
-  const brandLogoBg = "bg-[#0D1F3C]";
-
-  // Active theme indicators — PahamIn teal style
-  const activeItemClass = "bg-[#0DC6B8]/15 text-[#0DC6B8]";
-  const activeIconClass = "text-[#0DC6B8]";
 
   // 3. Complete list of all system sections
   const navigationSections: SidebarSection[] = [
