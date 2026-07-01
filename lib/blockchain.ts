@@ -45,7 +45,7 @@ export class BlockchainService {
   ) {
     // 1. Simulating connection to Hyperledger Gateway node
     const blockchainNode = process.env.BLOCKCHAIN_NODE_URL;
-    const channel = process.env.BLOCKCHAIN_CHANNEL || "obatin-channel";
+    const channel = process.env.BLOCKCHAIN_CHANNEL || "medilink-channel";
     const chaincode = process.env.BLOCKCHAIN_CHAINCODE || "emr-ledger";
     
     // In a real network, this client would sign a proposal using user certificate & private key:

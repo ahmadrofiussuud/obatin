@@ -60,7 +60,7 @@ export default function AdminDashboardPage() {
             <div className="flex justify-between items-center pb-2 border-b border-neutral-100 dark:border-neutral-800/50 last:border-none">
               <div>
                 <p className="text-body-md font-semibold text-neutral-800 dark:text-neutral-200">Database Utama (PostgreSQL)</p>
-                <p className="text-caption text-neutral-500">Host: localhost:5432 / DB: obatin</p>
+                <p className="text-caption text-neutral-500">Host: localhost:5432 / DB: medilink</p>
               </div>
               <Badge variant="ACTIVE">ONLINE</Badge>
             </div>
@@ -76,7 +76,7 @@ export default function AdminDashboardPage() {
             <div className="flex justify-between items-center pb-2 border-b border-neutral-100 dark:border-neutral-800/50 last:border-none">
               <div>
                 <p className="text-body-md font-semibold text-neutral-800 dark:text-neutral-200">Hyperledger Peer Nodes</p>
-                <p className="text-caption text-neutral-500">Channel: obatin-channel (4 Peers)</p>
+                <p className="text-caption text-neutral-500">Channel: medilink-channel (4 Peers)</p>
               </div>
               <Badge variant="ACTIVE">ONLINE</Badge>
             </div>

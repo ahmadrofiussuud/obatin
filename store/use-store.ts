@@ -39,7 +39,7 @@ export const useGlobalStore = create<GlobalState>()(
       }),
     }),
     {
-      name: "obatin-global-storage", // local storage key
+      name: "medilink-global-storage", // local storage key
     }
   )
 );

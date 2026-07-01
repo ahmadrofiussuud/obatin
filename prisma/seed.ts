@@ -53,7 +53,7 @@ async function main() {
   const adminUser = await prisma.user.create({
     data: {
       name: "Dr. Pratama Hardi (Admin)",
-      email: "admin@obatin.id",
+      email: "admin@medilink.id",
       password: passwordHash,
       role: "ADMIN",
     },
@@ -63,7 +63,7 @@ async function main() {
   const doctorUser = await prisma.user.create({
     data: {
       name: "Dr. Andi Wijaya",
-      email: "doctor@obatin.id",
+      email: "doctor@medilink.id",
       password: passwordHash,
       role: "DOCTOR",
     },
@@ -83,7 +83,7 @@ async function main() {
   const patientUser = await prisma.user.create({
     data: {
       name: "Budi Santoso",
-      email: "patient@obatin.id",
+      email: "patient@medilink.id",
       password: passwordHash,
       role: "PATIENT",
     },

@@ -181,7 +181,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 <Sparkles className="h-4 w-4 text-[#0DC6B8]" />
               </div>
               <span className="text-[16px] font-extrabold tracking-tight text-[#0D1F3C]">
-                Medi<span className="text-[#0DC6B8]">AI</span>
+                Medi<span className="text-[#0DC6B8]">Link</span>
               </span>
             </Link>
 
@@ -317,7 +317,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             </div>
             {!collapsed && (
               <span className="text-[15px] font-extrabold tracking-tight text-white truncate">
-                Medi<span className="text-[#0DC6B8]">AI</span>
+                Medi<span className="text-[#0DC6B8]">Link</span>
               </span>
             )}
           </div>
@@ -406,7 +406,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                   <Sparkles className="h-3.5 w-3.5 text-[#0DC6B8]" />
                 </div>
                 <span className="text-[14px] font-extrabold text-[#0D1F3C] truncate max-w-[110px]">
-                  Medi<span className="text-[#0DC6B8]">AI</span>
+                  Medi<span className="text-[#0DC6B8]">Link</span>
                 </span>
               </div>
             </div>
@@ -488,7 +488,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                     <Sparkles className="h-3.5 w-3.5 text-[#0DC6B8]" />
                   </div>
                   <span className="text-[14px] font-extrabold text-white">
-                    Medi<span className="text-[#0DC6B8]">AI</span>
+                    Medi<span className="text-[#0DC6B8]">Link</span>
                   </span>
                 </div>
                 <button

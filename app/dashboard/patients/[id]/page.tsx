@@ -444,7 +444,7 @@ export default function PatientDetailPage() {
         isOpen={isQrOpen}
         onClose={() => setIsQrOpen(false)}
         title="QR Code Identitas Medis Digital"
-        description="Gunakan QR ini untuk mengidentifikasi berkas pasien di faskes mitra ObatIn."
+        description="Gunakan QR ini untuk mengidentifikasi berkas pasien di faskes mitra MediLink."
       >
         <div className="flex flex-col items-center justify-center p-6 space-y-4 text-center">
           <div className="p-4 bg-white rounded-2xl border border-neutral-200/80 shadow-soft-2 w-max select-none">

@@ -17,7 +17,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   // Initialize theme choice on mount
   useEffect(() => {
-    const savedTheme = localStorage.getItem("obatin-theme") as Theme | null;
+    const savedTheme = localStorage.getItem("medilink-theme") as Theme | null;
     const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     
     const initialTheme = savedTheme || (systemPrefersDark ? "dark" : "light");
@@ -36,7 +36,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
-    localStorage.setItem("obatin-theme", newTheme);
+    localStorage.setItem("medilink-theme", newTheme);
     
     if (newTheme === "dark") {
       document.documentElement.classList.add("dark");

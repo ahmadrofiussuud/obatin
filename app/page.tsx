@@ -1,5 +1,5 @@
 "use client";
-// ObatIn Production Landing Page
+// MediLink Production Landing Page
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -153,7 +153,7 @@ export default function HomePage() {
               <HeartPulse className="h-4.5 w-4.5 text-[#0DC6B8]" />
             </div>
             <span className="text-[17px] font-extrabold tracking-tight text-[#0D1F3C]">
-              Medi<span className="text-[#0DC6B8]">AI</span>
+              Medi<span className="text-[#0DC6B8]">Link</span>
             </span>
           </Link>
 
@@ -227,11 +227,11 @@ export default function HomePage() {
             <h1 className="text-[42px] md:text-[52px] lg:text-[58px] font-black leading-[1.1] text-[#0D1F3C] tracking-tight">
               Kelola Kesehatan <br />
               Lebih Cerdas dengan{" "}
-              <span className="text-[#0DC6B8]">ObatIn</span>
+              <span className="text-[#0DC6B8]">MediLink</span>
             </h1>
 
             <p className="text-[16px] text-neutral-600 leading-relaxed max-w-lg">
-              ObatIn membantu pasien, dokter, dan admin klinik mengelola rekam medis digital, antrean, dan konsultasi AI — terintegrasi SATUSEHAT Kemenkes RI.
+              MediLink membantu pasien, dokter, dan admin klinik mengelola rekam medis digital, antrean, dan konsultasi AI — terintegrasi SATUSEHAT Kemenkes RI.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 pt-1">
@@ -286,7 +286,7 @@ export default function HomePage() {
             <div className="relative w-[320px] h-[320px] md:w-[400px] md:h-[400px]">
               <Image
                 src="/images/hero_illustration.png"
-                alt="ObatIn Platform Illustration"
+                alt="MediLink Platform Illustration"
                 fill
                 className="object-contain drop-shadow-2xl"
                 priority
@@ -314,7 +314,7 @@ export default function HomePage() {
               <span className="text-[#0DC6B8]">yang Lebih Baik</span>
             </h2>
             <p className="text-[15px] text-neutral-500 max-w-xl mx-auto leading-relaxed">
-              ObatIn hadir dengan ekosistem fitur yang saling melengkapi — dari AI klinis, keamanan blockchain, hingga EMR terintegrasi SATUSEHAT.
+              MediLink hadir dengan ekosistem fitur yang saling melengkapi — dari AI klinis, keamanan blockchain, hingga EMR terintegrasi SATUSEHAT.
             </p>
           </div>
 
@@ -353,12 +353,12 @@ export default function HomePage() {
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-[34px] md:text-[44px] font-black text-[#0D1F3C] leading-tight">
               Bagaimana{" "}
-              <span className="text-[#0DC6B8]">ObatIn</span>
+              <span className="text-[#0DC6B8]">MediLink</span>
               <br />
               Membantu Anda?
             </h2>
             <p className="text-[15px] text-neutral-500 max-w-xl mx-auto leading-relaxed">
-              ObatIn dirancang untuk menyederhanakan alur kerja medis — dari pendaftaran pasien hingga penyimpanan rekam medis yang aman dan transparan.
+              MediLink dirancang untuk menyederhanakan alur kerja medis — dari pendaftaran pasien hingga penyimpanan rekam medis yang aman dan transparan.
             </p>
           </div>
 
@@ -408,7 +408,7 @@ export default function HomePage() {
                 <span className="text-[#0DC6B8]">Transparan</span>
               </h2>
               <p className="text-[15px] text-neutral-500 leading-relaxed">
-                ObatIn lahir dari sebuah visi: membebaskan pasien dan dokter Indonesia dari birokrasi rekam medis yang kaku dan tidak transparan, menggantinya dengan sistem digital berbasis AI dan blockchain yang adil, aman, dan mudah diakses.
+                MediLink lahir dari sebuah visi: membebaskan pasien dan dokter Indonesia dari birokrasi rekam medis yang kaku dan tidak transparan, menggantinya dengan sistem digital berbasis AI dan blockchain yang adil, aman, dan mudah diakses.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/register"
@@ -466,7 +466,7 @@ export default function HomePage() {
                 </ul>
               </div>
 
-              {/* ObatIn */}
+              {/* MediLink */}
               <div className="bg-white rounded-2xl p-8 shadow-[0_4px_24px_rgba(13,198,184,0.12)] border-2 border-[#0DC6B8]/25 space-y-5 relative overflow-hidden">
                 <div className="absolute top-4 right-4">
                   <Sparkles className="h-5 w-5 text-[#0DC6B8]/30" />
@@ -474,7 +474,7 @@ export default function HomePage() {
                 <div className="h-11 w-11 rounded-xl bg-[#0DC6B8]/10 flex items-center justify-center">
                   <CheckCircle className="h-6 w-6 text-[#0DC6B8]" />
                 </div>
-                <h3 className="text-[20px] font-bold text-[#0DC6B8]">Platform ObatIn</h3>
+                <h3 className="text-[20px] font-bold text-[#0DC6B8]">Platform MediLink</h3>
                 <p className="text-[13px] text-[#0DC6B8]/70 leading-relaxed">Rekam medis digital terdistribusi yang aman, transparan, dan dapat diakses kapan saja, di mana saja.</p>
                 <ul className="space-y-2.5">
                   {[
@@ -504,7 +504,7 @@ export default function HomePage() {
             <span className="text-[#0DC6B8]">Lebih Cerdas?</span>
           </h2>
           <p className="text-[15px] text-neutral-500 leading-relaxed">
-            Bergabung dengan ratusan faskes yang sudah menggunakan ObatIn. Daftar gratis hari ini — tidak perlu kartu kredit.
+            Bergabung dengan ratusan faskes yang sudah menggunakan MediLink. Daftar gratis hari ini — tidak perlu kartu kredit.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
             <Link href="/register"
@@ -529,11 +529,11 @@ export default function HomePage() {
               <HeartPulse className="h-3.5 w-3.5 text-[#0DC6B8]" />
             </div>
             <span className="text-[15px] font-extrabold text-[#0D1F3C]">
-              Medi<span className="text-[#0DC6B8]">AI</span> Indonesia
+              Medi<span className="text-[#0DC6B8]">Link</span> Indonesia
             </span>
           </Link>
           <p className="text-[12px] text-neutral-400 text-center">
-            © 2026 ObatIn Indonesia. Platform Administrasi Kesehatan Digital Berbasis AI &amp; Blockchain.
+            © 2026 MediLink Indonesia. Platform Administrasi Kesehatan Digital Berbasis AI &amp; Blockchain.
           </p>
           <div className="flex items-center gap-5">
             {navLinks.map((l) => (

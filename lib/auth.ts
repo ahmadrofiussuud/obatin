@@ -59,29 +59,29 @@ export const authOptions: NextAuthOptions = {
 
         // Bypassing DB check using Sandbox Mock profiles for quick login/sandbox testing
         if (password === "password123" || password === "doctor123" || password === "patient123" || password === "admin123") {
-          if (email === "patient@obatin.id") {
+          if (email === "patient@medilink.id") {
             return {
               id: "mock-patient-id",
               name: "Budi Santoso (Mock Pasien)",
-              email: "patient@obatin.id",
+              email: "patient@medilink.id",
               role: "PATIENT" as UserRole,
               image: null,
             };
           }
-          if (email === "doctor@obatin.id") {
+          if (email === "doctor@medilink.id") {
             return {
               id: "mock-doctor-id",
               name: "Dr. Andi Wijaya (Mock Dokter)",
-              email: "doctor@obatin.id",
+              email: "doctor@medilink.id",
               role: "DOCTOR" as UserRole,
               image: null,
             };
           }
-          if (email === "admin@obatin.id") {
+          if (email === "admin@medilink.id") {
             return {
               id: "mock-admin-id",
               name: "Admin Faskes (Mock Admin)",
-              email: "admin@obatin.id",
+              email: "admin@medilink.id",
               role: "ADMIN" as UserRole,
               image: null,
             };
