@@ -219,8 +219,8 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════
           HERO
       ══════════════════════════════════════════════════ */}
-      <section id="beranda" className="pt-24 pb-16 md:pt-32 md:pb-24 px-6 md:px-10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section id="beranda" className="min-h-[80vh] lg:min-h-[85vh] flex items-center pt-24 pb-16 md:pt-32 md:pb-24 px-6 md:px-10">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
 
           {/* Left: Text */}
           <div className="space-y-6">
@@ -283,7 +283,7 @@ export default function HomePage() {
             </div>
 
             {/* Main illustration */}
-            <div className="relative w-[320px] h-[320px] md:w-[400px] md:h-[400px]">
+            <div className="relative w-[320px] h-[320px] md:w-[440px] md:h-[440px] lg:w-[480px] lg:h-[480px]">
               <Image
                 src="/images/hero_illustration.png"
                 alt="MediLink Platform Illustration"
