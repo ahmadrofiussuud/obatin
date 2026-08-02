@@ -223,18 +223,18 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
 
           {/* Left: Text */}
-          <div className="space-y-8">
+          <div className="space-y-8 text-center lg:text-left flex flex-col items-center lg:items-start">
             <h1 className="text-[44px] md:text-[54px] lg:text-[62px] font-black leading-[1.15] text-[#0D1F3C] tracking-tight">
               Kelola Kesehatan <br />
               Lebih Cerdas dengan <br />
               <span className="text-[#0DC6B8]">MediLink</span>
             </h1>
 
-            <p className="text-[17px] md:text-[18px] text-neutral-600 leading-relaxed max-w-xl">
+            <p className="text-[17px] md:text-[18px] text-neutral-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
               MediLink membantu pasien, dokter, dan admin klinik mengelola rekam medis digital, antrean, dan konsultasi AI — terintegrasi SATUSEHAT Kemenkes RI.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto justify-center">
               <Link href="/register"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0D1F3C] hover:bg-[#1a2f50] text-white font-bold rounded-xl text-[16px] transition-all shadow-md">
                 Mulai Sekarang
@@ -247,7 +247,7 @@ export default function HomePage() {
             </div>
 
             {/* Social proof */}
-            <div className="flex items-center gap-4 pt-4 border-t border-neutral-200/50">
+            <div className="flex items-center justify-center lg:justify-start gap-4 pt-4 border-t border-neutral-200/50 w-full">
               <div className="flex -space-x-2">
                 {avatarColors.map((c, i) => (
                   <div key={i} className={`h-9 w-9 rounded-full ${c} border-2 border-white flex items-center justify-center text-white text-[11px] font-bold`}>
@@ -255,7 +255,7 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
-              <div>
+              <div className="text-left">
                 <p className="text-[16px] font-bold text-[#0D1F3C]">+500rb</p>
                 <p className="text-[12px] text-neutral-500">Dipercaya oleh faskes di seluruh Indonesia</p>
               </div>
