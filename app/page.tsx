@@ -219,44 +219,44 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════
           HERO
       ══════════════════════════════════════════════════ */}
-      <section id="beranda" className="min-h-[80vh] lg:min-h-[85vh] flex items-center pt-24 pb-16 md:pt-32 md:pb-24 px-6 md:px-10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+      <section id="beranda" className="min-h-[90vh] lg:min-h-[95vh] flex items-center pt-28 pb-20 md:pt-36 md:pb-28 px-6 md:px-10">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
 
           {/* Left: Text */}
-          <div className="space-y-6">
-            <h1 className="text-[42px] md:text-[52px] lg:text-[58px] font-black leading-[1.1] text-[#0D1F3C] tracking-tight">
+          <div className="space-y-8">
+            <h1 className="text-[44px] md:text-[54px] lg:text-[62px] font-black leading-[1.15] text-[#0D1F3C] tracking-tight">
               Kelola Kesehatan <br />
-              Lebih Cerdas dengan{" "}
+              Lebih Cerdas dengan <br />
               <span className="text-[#0DC6B8]">MediLink</span>
             </h1>
 
-            <p className="text-[16px] text-neutral-600 leading-relaxed max-w-lg">
+            <p className="text-[17px] md:text-[18px] text-neutral-600 leading-relaxed max-w-xl">
               MediLink membantu pasien, dokter, dan admin klinik mengelola rekam medis digital, antrean, dan konsultasi AI — terintegrasi SATUSEHAT Kemenkes RI.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 pt-1">
+            <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <Link href="/register"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#0D1F3C] hover:bg-[#1a2f50] text-white font-bold rounded-xl text-[15px] transition-all shadow-md">
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0D1F3C] hover:bg-[#1a2f50] text-white font-bold rounded-xl text-[16px] transition-all shadow-md">
                 Mulai Sekarang
               </Link>
               <a href="#cara-kerja"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border-2 border-[#0DC6B8] text-[#0DC6B8] hover:bg-[#0DC6B8]/5 font-bold rounded-xl text-[15px] transition-all">
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-[#0DC6B8] text-[#0DC6B8] hover:bg-[#0DC6B8]/5 font-bold rounded-xl text-[16px] transition-all">
                 <Play className="h-4 w-4 fill-[#0DC6B8]" />
                 Lihat Cara Kerja
               </a>
             </div>
 
             {/* Social proof */}
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex items-center gap-4 pt-4 border-t border-neutral-200/50">
               <div className="flex -space-x-2">
                 {avatarColors.map((c, i) => (
-                  <div key={i} className={`h-8 w-8 rounded-full ${c} border-2 border-white flex items-center justify-center text-white text-[10px] font-bold`}>
+                  <div key={i} className={`h-9 w-9 rounded-full ${c} border-2 border-white flex items-center justify-center text-white text-[11px] font-bold`}>
                     {["BS", "SR", "AP", "DL"][i]}
                   </div>
                 ))}
               </div>
               <div>
-                <p className="text-[15px] font-bold text-[#0D1F3C]">+500rb</p>
+                <p className="text-[16px] font-bold text-[#0D1F3C]">+500rb</p>
                 <p className="text-[12px] text-neutral-500">Dipercaya oleh faskes di seluruh Indonesia</p>
               </div>
             </div>
@@ -265,7 +265,7 @@ export default function HomePage() {
           {/* Right: Illustration + floating cards */}
           <div className="relative flex items-center justify-center">
             {/* Floating feature cards */}
-            <div className="absolute -top-4 right-4 md:right-0 bg-white rounded-2xl px-4 py-3 shadow-[0_4px_20px_rgba(0,0,0,0.1)] flex items-center gap-2.5 border border-neutral-100 z-10 animate-float-slow">
+            <div className="absolute -top-6 right-4 md:right-0 bg-white rounded-2xl px-4 py-3 shadow-[0_4px_20px_rgba(0,0,0,0.1)] flex items-center gap-2.5 border border-neutral-100 z-10 animate-float-slow">
               <Activity className="h-5 w-5 text-[#0DC6B8]" />
               <span className="text-[12px] font-semibold text-[#0D1F3C]">Vitalitas Real-time</span>
             </div>
@@ -283,7 +283,7 @@ export default function HomePage() {
             </div>
 
             {/* Main illustration */}
-            <div className="relative w-[320px] h-[320px] md:w-[440px] md:h-[440px] lg:w-[480px] lg:h-[480px]">
+            <div className="relative w-[320px] h-[320px] md:w-[460px] md:h-[460px] lg:w-[520px] lg:h-[520px]">
               <Image
                 src="/images/hero_illustration.png"
                 alt="MediLink Platform Illustration"
