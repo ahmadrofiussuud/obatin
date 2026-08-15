@@ -120,5 +120,5 @@ export const authOptions: NextAuthOptions = {
     signIn: "/login",
     error: "/login",
   },
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET || "medilink-fallback-secret-key-12345",
 };
